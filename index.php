@@ -2,6 +2,8 @@
 <html>
 <head>
 	<title>netfix</title>
+
+	<link rel="stylesheet" type="text/css" href="">
 </head>
 <body>
 

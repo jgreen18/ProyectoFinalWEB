@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
 	<title>Getfix</title>
 
 	<link rel="stylesheet" type="text/css" href="assets/css/index.css?v0.0.8">
@@ -52,5 +53,29 @@
             }
 	
 </script> -->
+=======
+	<title>netfix</title>
+
+	<link rel="stylesheet" type="text/css" href="">
+</head>
+<body>
+
+	<div>
+		<form>
+			<fieldset>
+
+				<img src="imagenes/usuario.png">
+				<legend>iniciar sesion</legend>
+			<input type="text" name="name" placeholder="USERNAME">
+			<p><a href="">olvidaste tu usuario ?</a></p>
+			<input type="password" name="pass" placeholder="* * * * * * * ">
+			<p><a href="">olvidaste tu contraseña ?</a></p>
+
+
+			</fieldset>
+		</form>
+	</div>
+
+>>>>>>> 7855ca43fd227e46100a22258edf7a8ee768f37e
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Getfix</title>
-	<link rel="stylesheet" type="text/css" href="assets/css/index.css?v0.0.10">
+	<link rel="stylesheet" type="text/css" href="assets/css/index.css?v0.0.12">
 </head>
 <body > 
 		<div class="is">
@@ -16,9 +16,11 @@
 				<input type="text" name="name" placeholder="USERNAME" height="29px">
 				<p><a href="http://localhost/proyectoFinal/registro.php">olvidaste tu usuario ?</a></p>
 				<input type="password" name="pass" placeholder="* * * * * * * ">
-				<p><a href="http://localhost/proyectoFinal/peliculas.php" >olvidaste tu contraseña ?</a></p>
+				<p><a href="./peliculas" >olvidaste tu contraseña ?</a></p>
 
 				<button >Iniciar sesion</button>
+
+				<p><a href="./registro">¿no tienes cuenta?</a></p>
 
 
 			</form>

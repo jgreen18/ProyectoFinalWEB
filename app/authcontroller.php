@@ -12,35 +12,42 @@ $nombre = strip_tags($_POST['nombre']) ;
 $apellidos = strip_tags($_POST['apellidos']);
 $nick = strip_tags($_POST['nick']);
 $email = strip_tags($_POST['email']);
-$contraseña = strip_tags($_POST['contraseña']);
-	$authController->register($nombre,$apellidos,$nick,$email,$contraseña);
+$password = strip_tags($_POST['password']);
+	$authController->register($nombre,$apellidos,$nick,$email,$password);
 			break;
 		
-		
+	
 	}
 }
 class AuthController
 {
 
-	public function register($nombre,$apellidos,$nick,$email,$contraseña)
+	public function register($nombre,$apellidos,$nick,$email,$password)
 	{
+		
 		$conn = connect();
 		if (!$conn->connect_error) {
-			if ($nombre != "" && $apellidos != "" && $nick != "" && $email != "" && $contraseña!=""  ) {
-				$originalpassword = $contraseña;
-				$password = md5($contraseña."iphone");
-				 
-				 $query = "insert into users(nombre, apellidos, nick, email, contraseña) value (?,?,?,?,?)";
-				 $prepared_query = $conn->prepare($query);
-				 $prepared_query->bind_param('sssss',$name,$apellidos,$nick,$email,$contraseña);
+			if ($nombre != "" && $apellidos != "" && $nick != "" && $email != "" && $password!=""  ) {
 
-				 if ($prepared_query->execute()) {
-				 	echo "gola";
+				$originalpassword = $password;
+				$password = md5($password."iphone");
+				 
+				 $query = "insert into users(nombre, apellidos, nick, email, password) value (?,?,?,?,?)";
+
+				
+
+				 $prepared_query = $conn->prepare($query);
+				 $prepared_query->bind_param('sssss',$nombre,$apellidos,$nick,$email,$password);
+				 $execute = $prepared_query->execute();
+
+				 var_dump($execute);
+				 if ($execute) {
+				 	
 				 	
 				 }else{
 				 	$_SESSION['error'] = 'verifique la conexion a la base de datos';
-					header("location". $SERVER['HTTP_REFERER']);
-					echo "no se hizo carnal";
+					header("location". $_SERVER['HTTP_REFERER']);
+					
 				 }
 			}
 		}else{

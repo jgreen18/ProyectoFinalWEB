@@ -3,8 +3,10 @@
 <head>
 	<title>Getfix</title>
 	<link rel="stylesheet" type="text/css" href="../assets/css/index.css?v0.0.12">
+
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
 </head>
 <body > 
 		<div class="is">
@@ -17,6 +19,7 @@
 					
 				<input type="text" name="email" placeholder="email" required="" height="29px">
 
+
 				<p style=""><a href="">¿Olvidaste tu usuario ?</a></p>
 
 				<input  required="" type="password" name="password" placeholder="* * * * * * * ">
@@ -26,6 +29,7 @@
 				<button type="submit" id="iniciar">Iniciar sesion</button>
 
 				<p id="subenlace"><a href="../registro">¿No tienes cuenta?</a></p>
+
 				<input type="hidden" name="action" value="login">
 
 			</form>

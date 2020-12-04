@@ -18,7 +18,7 @@ $clasification = strip_tags($_POST['clasification']);
 		$movieController->store($title,$description,$minutes,$clasification);
 
 			break;
-			
+
 		case 'edit':
 		$id = strip_tags($_POST['id']);
 	$title =strip_tags($_POST['title']);
@@ -112,25 +112,25 @@ class MovieController
 					$prepared_query = $conn->prepare($query);
 					$prepared_query->bind_param('sssisi',$title,$description,$original_name,$minutes,$clasification,$id);
 				if ($prepared_query->execute()) {
-					// header("Location:". $_SERVER['HTTP_REFERER'] );
-					echo "si se hizo";
+					header("Location:". $_SERVER['HTTP_REFERER'] );
+					
 				
 				}else
 				{
-					// header("Location:". $_SERVER['HTTP_REFERER'] );
-					echo "no se hizo";
+					header("Location:". $_SERVER['HTTP_REFERER'] );
+					
 				}
 			}
 			}else{
-				// header("Location:". $_SERVER['HTTP_REFERER'] );
-				echo "no se hizo2";
+				header("Location:". $_SERVER['HTTP_REFERER'] );
+				
 				
 			}
 			
 			}else
 			{
-				// header("Location:". $_SERVER['HTTP_REFERER'] );
-				echo "no se hizo3";
+				header("Location:". $_SERVER['HTTP_REFERER'] );
+				
 				
 			}
 	}

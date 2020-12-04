@@ -48,7 +48,7 @@ class AuthController
 				 $execute = $prepared_query->execute();
 
 				 var_dump($execute);
-				 if ($execute) {
+				 if ($prepared_query->execute()) {
 				 	$this->acces($email, $originalpassword);
 				 	
 				 	

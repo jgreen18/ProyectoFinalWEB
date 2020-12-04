@@ -1,0 +1,89 @@
+
+html, body{
+  height:100%;
+  margin:0px;
+  display: flex;
+  flex-direction: column;
+  background-image: url("../imagenes/back1.jpg");
+  background-size:100%; 
+  background-repeat: no-repeat;
+  /*background-color: red;*/
+  font-family: 'Roboto', sans-serif;
+}
+.ejemplo{
+	min-height: 3em;
+	background-color: red;
+	width: 20%;
+	display: block;
+}
+
+.is{
+	
+	box-shadow:6px 7px 7px 0px rgba(50, 50, 50, 0.42);
+	width: 25%;
+	height: 65%;
+	margin: auto;
+	
+	margin-top: 5%;
+	background-color: #ffffffa8;
+	padding: 25px;
+	
+	margin-left: 60%;
+
+
+
+}
+
+
+
+.is p{
+	margin: 0px;
+	font-size: 15px;
+}
+.is input{
+	margin-top: 10%;
+	width: 80%;
+	height:30%; 
+	font-size: 20px;
+}
+.is  a{
+	text-decoration: none;
+	color: black;
+}
+
+
+.is button{
+	text-align: center;
+
+	margin-left: 35%;
+	width: 100px;
+	height: 35px;
+	margin-top: 2em;
+
+}
+.cir{
+	box-shadow:6px 7px 7px 0px rgba(50, 50, 50, 0.42);
+	border-style: solid;
+	margin:auto;
+	height: 173px;
+    width: 178px;
+	border-radius: 50%
+}
+.cir img{
+width: 50%;
+margin:25%;
+
+}
+
+#iniciar{
+		background-color: #0098cb;
+		color: #fff;
+		cursor: pointer;
+		border-radius: 3px;
+		border-color: #0098cb;
+}
+
+#iniciar:hover{
+		background-color: #0098E5;
+}
+

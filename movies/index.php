@@ -101,12 +101,12 @@
 			
 
 			
-		<button type="submit" style="margin-left: 35%; margin-top: 5%; color: white; background-color: #0098cb; border-color: #0098cb; cursor: pointer; padding: 1%;">
+		<button type="submit"  onclick="remove()" style="margin-left: 35%; margin-top: 5%; color: white; background-color: #0098cb; border-color: #0098cb; cursor: pointer; padding: 1%;">
 			eliminar
 		</button>
 
 
-			<button type="button" onclick="store()" style=" margin-top: 5%; color: white; background-color: #0098cb; border-color: #0098cb; cursor: pointer; padding: 1%;">
+			<button  onclick="store()" style=" margin-top: 5%; color: white; background-color: #0098cb; border-color: #0098cb; cursor: pointer; padding: 1%;">
 				agregar
 			</button>
 
@@ -139,6 +139,14 @@
 	document.getElementById('edit').style.display="none";	
 	document.getElementById('destroy').style.display="block";
 
+	}
+	function remove(id){
+		var confirm = prompt("Si quiere eliminar el registro, escriba "+ id);
+		if (confirm == id) 
+		{
+			document.getElementById('id_destroy').value= id;
+			document.getElementById('destroyForm').submit();
+		}
 	}
 </script>
 	</div>

@@ -43,6 +43,27 @@ $clasification = strip_tags($_POST['clasification']);
 
 class MovieController
 {
+
+	public function get()
+	{
+		$conn = connect();
+		if ($conn->connect_error==false) {
+			
+			$query = "select * from movies";
+			$prepared_query = $conn->prepare($query);
+			$prepared_query->execute();
+
+			$results = $prepared_query->get_result();
+			$movies = $results->fetch_all(MYSQLI_ASSOC);
+
+			if (count($movies)>0) {
+				return $movies;
+			}else
+				return array();
+
+		}else
+			return array();
+	}
 	public function store($title,$description,$minutes,$clasification)
 	{
 		$conn = connect();

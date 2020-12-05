@@ -1,10 +1,18 @@
+<?php 
+include "../app/movieController.php";
+
+	
+	$movieController = new MovieController();
+	$movies = $movieController->get(); 
+	
+	?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Peliculas</title>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="../assets/css/peliculas.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/peliculas.css?v0.0.1">
 
 </head>
 <body style=" margin: 0px; padding: 0px; font-family: 'Roboto', sans-serif;">
@@ -34,9 +42,9 @@
 
 	</div>
 
-	<div style="position: relative; background: linear-gradient(to bottom, gray, black); width: 100%; height: 700px; margin: 0px; padding: 0px;">
+	 <div style="position: relative; background: linear-gradient(to bottom, gray, black); width: 100%; height: 100%; min-height: 700px; margin: 0px; padding: 0px;">
 		
-		<a href="#openModal"><div id="catalogo" style="padding-top: 5%; margin-left: 5%; display: inline-block; width: 18%; height: 40px;">
+	<!--	<a href="#openModal"><div id="catalogo" style="padding-top: 5%; margin-left: 5%; display: inline-block; width: 18%; height: 40px;">
 			<img src="../assets/imagenes/supercool.jpg" width="100%" style="">
 		</div>
 	</a>
@@ -96,28 +104,61 @@
 <a href="#openModal"><div id="catalogo" style="padding-top: 5%; margin-left: 5%; display: inline-block; width: 18%; height: 40px;">
 	<img src="../assets/imagenes/vecinos.jpg" width="100%" style="">
 </div>
-</a>
+</a> -->
+<?php foreach ($movies as $movie): ?>
+			
+					<a href="#openModal<?=$movie['id']?>">
+						<div id="catalogo" style="padding-top: 5%;margin-top: 3%; margin-left: 5%; display: inline-block; width: 18%; height: 40px;">
+						<img style="background-color: red;" width="100%" src="../assets/imgpeli/<?= $movie['cover'] ?>">
+					
 
-<div id="openModal" class="modalDialog">
+
+					<a href="details/?id=<?= $movie['Descripcion'] ?>">
+						
+					</a> 
+
+					</div>
+					</a> 
+				 
+			
+				<div id="openModal<?=$movie['id']?>" class="modalDialog">
 	<div>
-		<a href="#close" title="Close" class="close">X</a>
+		<a href="#close" title="Close" onclick="" class="close">X</a>
 		<div class="centro">
+			
+			
+					
+
 			<div style="" class="imge">
-				<img style="" width="100%" src="../assets/imagenes/suicida.jpg">
+				<img style="" width="100%" src="../assets/imgpeli/<?= $movie['cover'] ?>">
 			</div>
-			<h1 style="text-align: center; font-weight: lighter; padding-top: 2%;">titulo</h1>
-			<h4>Capitulos-temporada </h4>
-			<h4>Capitulo-"nombre del capitulo"</h4>
-			<p>Descripcion Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </p>
+				
+				
+			
+			<h1 style="text-align: center; font-weight: lighter; padding-top: 2%;"><?= $movie['title']?></h1>
+			<h4><?= $movie['minutes']." minutos"?></h4>
+			<h4><?="Clasificacion ". $movie['clasification']?></h4>
+			<p><?= $movie['description']?></p>
 			<button style="margin-left: 40%; margin-top: 3%;">Reproducir</button>
-		</div>
+	</div>
 
 	</div>
 </div>
+				
+			<?php endforeach ?> 
+
+
 
 </div>
 
+<script type="text/javascript">
 
+	 function obtenerDatos()
+	 {
+
+	 }
+	
+
+</script>
 </body>
 </html>

@@ -118,6 +118,10 @@ $movieController = new MovieController();
 			<th>
 				Actions
 			</th>
+
+			<th>
+				vistas
+			</th>
 		</thead>
 		<tbody>
 			<?php foreach ($movies as $movie): ?>
@@ -142,6 +146,9 @@ $movieController = new MovieController();
 						 </button>
 						 <button style="width: 100%" onclick="destroy()" style="width: 100%;">Eliminar</button>
 					</td> 
+					<td>
+						<?= $movie['vistas'] ?>
+					</td>
 				</tr>
 			<?php endforeach ?>
 		</tbody>

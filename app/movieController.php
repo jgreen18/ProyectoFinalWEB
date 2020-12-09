@@ -36,6 +36,14 @@ $clasification = strip_tags($_POST['clasification']);
 		$movieController->delete($id);
 
 		break;
+
+		case 'vista':
+
+		$id = strip_tags($_POST['id']);
+
+			$movieController->vista($id);
+
+			break;
 		
 		
 	}
@@ -43,6 +51,40 @@ $clasification = strip_tags($_POST['clasification']);
 
 class MovieController
 {
+	public function vista($id){
+		$conn = connect();
+		if ($conn->connect_error==false) 
+		{
+			
+			if ($id!="")
+			{
+				$query = "update movies set vistas= vistas+1 where id=?";
+
+					$prepared_query = $conn->prepare($query);
+					$prepared_query->bind_param('i',$id);
+				if ($prepared_query->execute()) 
+				{
+					header("Location:../vistap");
+					
+				}else
+				{
+					header("Location:". $_SERVER['HTTP_REFERER'] );
+					// echo "1";
+				}
+			} else{
+				header("Location:". $_SERVER['HTTP_REFERER'] );
+				
+				// echo "2";
+			}
+
+		}else{
+				header("Location:". $_SERVER['HTTP_REFERER'] );
+				
+				// echo "2";
+			}
+			
+
+	}
 
 	public function get()
 	{

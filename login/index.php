@@ -31,7 +31,7 @@ include"../app/app.php";
 
 				<button type="submit" id="iniciar">Iniciar sesion</button>
 
-				<p id="subenlace"><a href="../registro">¿No tienes cuenta?</a></p>
+				<p style="margin-left: 32%; margin-top: 5%;"><a href="../registro">¿No tienes cuenta?</a></p>
 
 				<input type="hidden" name="action" value="login">
 

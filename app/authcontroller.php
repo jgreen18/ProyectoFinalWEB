@@ -63,19 +63,19 @@ class AuthController
 				 	
 				 }else{
 				 	$_SESSION['error'] = 'verifique los datos envíados';
-// echo "1";
+
 					header("Location:". $_SERVER['HTTP_REFERER'] );
 					
 				 }
 			}else{
 				$_SESSION['error'] = 'verifique la información del formulario';
-// echo "2";
+
 				header("Location:". $_SERVER['HTTP_REFERER'] );
 			}
 
 		}else{
 			$_SESSION['error'] = 'verifique la conexión a la base de datos';
-// echo "3";
+
 			header("Location:". $_SERVER['HTTP_REFERER'] );
 		}
 
@@ -88,29 +88,26 @@ class AuthController
 				$password = md5($password.'iphone');
 
 				$query = "select * from users where email = ? and password = ?";
+
 				$prepared_query = $conn->prepare($query);
 				$prepared_query->bind_param('ss',$email,$password);
-
-				if ($prepared_query->execute()) {
-					
-					$results = $prepared_query->get_result(); 
-
-					$user = $results->fetch_all(MYSQLI_ASSOC);
-
-					if (count($user)>0) {
+				if($prepared_query->execute()) {
+					$results = $prepared_query->get_result();
+					$user=$results->fetch_all(MYSQLI_ASSOC);
+					if(count($user)>0) {
 						
 						$user = array_pop($user);
 
-						$_SESSION['id'] = $user['id'];
-						$_SESSION['nombre'] = $user['nombre'];
-						$_SESSION['email'] = $user['email']; 
-						$_SESSION['role'] = $user['role'];
-
-
+							$_SESSION['id'] = $user['id'];
+							$_SESSION['nombre'] = $user['nombre'];
+							$_SESSION['email'] = $user['email']; 
+							$_SESSION['role'] = $user['role'];
+							
 						header("Location:../peliculas" );
 					}else{
 						$_SESSION['error'] = 'verifique los datos envíados'; 
 						header("Location:". $_SERVER['HTTP_REFERER'] );
+						// echo "1";
 					}
 
 
@@ -138,7 +135,7 @@ class AuthController
 
 
 		session_destroy();
-		header('Location: ../peliculas');
+		header('Location: ../login');
 
 	}
 };

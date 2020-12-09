@@ -1,3 +1,9 @@
+<?php 
+include "../app/movieController.php";
+
+	$movieController = new MovieController();
+	$movies = $movieController->get();  
+	?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +14,7 @@
 <body style="margin: 0; padding: 0; background-color: #5D6D7E; color: white;">
 
 	<div style="width: 100%; height: 30px; background-color: black; padding-top: 1%;">
-		<h3 style="color: orange; font-family: arial; margin: 0; margin-left: 2%;"><a href="" style="text-decoration: none; color: orange;">Getfix</a></h3>
+		<h3 style="color: orange; font-family: arial; margin: 0; margin-left: 2%;"><a href="../peliculas" style="text-decoration: none; color: orange;">Getfix</a></h3>
 	</div>
 
 	<div style="width: 75%; height: 428px; display: inline-block; margin: 0; padding-top: 4.6%;">
@@ -40,7 +46,7 @@
 
 	<div style="background-color: #1B2631; width: 75%; height: 80px; padding-top: 2%;">
 		<img style="margin-left: 2%; display: inline-block;" src="../assets/imagenes/ver.png">
-		<p style="margin-left: 0.5%; margin-top: 0; margin-right: 3%; display: inline-block;"> 0</p>
+		<p style="margin-left: 0.5%; margin-top: 0; margin-right: 3%; display: inline-block;"> 0 </p>
 		
 		<a href=""><div style="display: inline-block;">
 			<img id="likes" style="margin-left: 2%; display: inline-block;" src="../assets/imagenes/likes.png">

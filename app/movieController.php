@@ -1,6 +1,6 @@
 <?php 
-
-// include "app.php";
+ 
+include"../app/app.php";
 include_once "connectionController.php";
 
 
@@ -115,17 +115,18 @@ class MovieController
 	{
 			$conn = connect();
 
+
 			if ($conn->connect_error==false) 
 			{
 				if ($id!="" && $title!="" && $description!="" && $minutes!="" && $clasification!="") 
 				{
-
 					// SUBIR ARCHIVO COVER
 				$target_path = "../assets/imgpeli/";
 				$original_name = basename($_FILES['cover']['name']);
 				$new_file_name = $target_path.basename($_FILES['cover']['name']);
 				if (move_uploaded_file($_FILES['cover']['tmp_name'], $new_file_name)) {
 				// SUBIR ARCHIVO COVER
+					
 
 
 					$query = "update movies set title = ?, description=?,cover=?,minutes = ?, clasification =? where id =? ";
@@ -135,23 +136,22 @@ class MovieController
 				if ($prepared_query->execute()) {
 					header("Location:". $_SERVER['HTTP_REFERER'] );
 					
-				
 				}else
 				{
 					header("Location:". $_SERVER['HTTP_REFERER'] );
-					
+					// echo "1";
 				}
 			}
 			}else{
 				header("Location:". $_SERVER['HTTP_REFERER'] );
 				
-				
+				// echo "2";
 			}
 			
 			}else
 			{
 				header("Location:". $_SERVER['HTTP_REFERER'] );
-				
+				// echo "3";
 				
 			}
 	}

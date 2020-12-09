@@ -1,14 +1,18 @@
 <?php 
+
+include"../app/app.php";
+
+include "../app/movieController.php";
+
+	$movieController = new MovieController();
+	$movies = $movieController->get(); 
+
+
 if(!isset($_SESSION) || !isset($_SESSION['id']))
 {
 	header("Location:../");
 }
 
-include "../app/movieController.php";
-
-	
-	$movieController = new MovieController();
-	$movies = $movieController->get(); 
 	
 	?>
 <!DOCTYPE html>
@@ -17,11 +21,16 @@ include "../app/movieController.php";
 	<title>Peliculas</title>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="../assets/css/peliculas.css?v0.0.1">
+	<link rel="stylesheet" type="text/css" href="../assets/css/peliculas.css?v0.0.2">
 
 </head>
 <body style=" margin: 0px; padding: 0px; font-family: 'Roboto', sans-serif;">
 
+<form id="logout" method="POST" action="../app/authController.php" enctype="multipart/form-data" >
+<button type="">cerrar sesion</button>
+<input type="hidden"  name="action" value="logout">
+
+</form>
 
 
 	<div style="width: 100%; background-color: rgb(121 120 120); margin: 0px; height: 550px; position: relative; z-index: 4; padding: 0px;">
@@ -48,68 +57,7 @@ include "../app/movieController.php";
 	</div>
 
 	 <div style="position: relative; background: linear-gradient(to bottom, gray, black); width: 100%; height: 100%; min-height: 700px; margin: 0px; padding: 0px;">
-		
-	<!--	<a href="#openModal"><div id="catalogo" style="padding-top: 5%; margin-left: 5%; display: inline-block; width: 18%; height: 40px;">
-			<img src="../assets/imagenes/supercool.jpg" width="100%" style="">
-		</div>
-	</a>
-
-	<a href="#openModal"><div id="catalogo" style="padding-top: 5%; margin-left: 5%; display: inline-block; width: 18%; height: 40px;">
-		<img src="../assets/imagenes/ted.jpg" width="100%" style="">
-	</div>
-</a>
-
-<a href="#openModal"><div id="catalogo" style="padding-top: 5%; margin-left: 5%; display: inline-block; width: 18%; height: 40px;">
-	<img src="../assets/imagenes/kickass.jpg" width="100%" style="">
-</div>
-</a>
-
-<a href="#openModal"><div id="catalogo" style="padding-top: 5%; margin-left: 5%; display: inline-block; width: 18%; height: 40px;">
-	<img src="../assets/imagenes/budapest.jpg" width="100%" style="">
-</div>
-</a>>
-
-
-<a href="#openModal"><div id="catalogo" style="padding-top: 5%; margin-left: 5%; display: inline-block; width: 18%; height: 40px;">
-	<img src="../assets/imagenes/guardia.jpg" width="100%" style="">
-</div>
-</a>
-
-<a href="#openModal"><div id="catalogo" style="padding-top: 5%; margin-left: 5%; display: inline-block; width: 18%; height: 40px;">
-	<img src="../assets/imagenes/eltamaño.jpg" width="100%" style="">
-</div>
-</a>
-
-<a href="#openModal"><div id="catalogo" style="padding-top: 5%; margin-left: 5%; display: inline-block; width: 18%; height: 40px;">
-	<img src="../assets/imagenes/Atyipical.jpg" width="100%" style="">
-</div>
-</a>
-
-<a href="#openModal"><div id="catalogo" style="padding-top: 5%; margin-left: 5%; display: inline-block; width: 18%; height: 40px;">
-	<img src="../assets/imagenes/Daredevil.jpg" width="100%" style="">
-</div>
-</a>
-
-<a href="#openModal"><div id="catalogo" style="padding-top: 5%; margin-left: 5%; display: inline-block; width: 18%; height: 40px;">
-	<img src="../assets/imagenes/nomanches.jpg" width="100%" style="">
-</div>
-</a>
-
-<a href="#openModal"><div id="catalogo" style="padding-top: 5%; margin-left: 5%; display: inline-block; width: 18%; height: 40px;">
-	<img src="../assets/imagenes/creed.jpg" width="100%" style="">
-</div>
-</a>
-
-<a href="#openModal"><div id="catalogo" style="padding-top: 5%; margin-left: 5%; display: inline-block; width: 18%; height: 40px;">
-	<img src="../assets/imagenes/suicida.jpg" width="100%" style="">
-</div>
-</a>
-
-
-<a href="#openModal"><div id="catalogo" style="padding-top: 5%; margin-left: 5%; display: inline-block; width: 18%; height: 40px;">
-	<img src="../assets/imagenes/vecinos.jpg" width="100%" style="">
-</div>
-</a> -->
+	
 <?php foreach ($movies as $movie): ?>
 			
 					<a href="#openModal<?=$movie['id']?>">

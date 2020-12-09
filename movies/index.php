@@ -1,9 +1,13 @@
-
 <?php 
-if(!isset($_SESSION) || !isset($_SESSION['id']))
-{
-	header("Location:../");
-}
+ 	include "../layouts/alerts.template.php";
+
+	include"../app/app.php";
+
+		if(!isset($_SESSION) || !isset($_SESSION['id'] )|| $_SESSION['role'] == '1'   ) 
+		{
+			header("Location:../peliculas");
+			
+		}
 
 include "../app/movieController.php";
 $movieController = new MovieController();
@@ -79,9 +83,7 @@ $movieController = new MovieController();
 				<option>AA</option>
 			</select>
 
-		<button type="button" onclick="store()" style=" width:25%; margin-left: 25%; margin-top: 5%; color: white; background-color: #0098cb; border-color: #0098cb; cursor: pointer; padding: 1%;">
-			Cancelar
-		</button>
+		
 			
 		<button type="submit" style=" width:25%; margin-left: 5%; margin-top: 5%; color: white; background-color: #0098cb; border-color: #0098cb; cursor: pointer; padding: 1%;">
 			editar

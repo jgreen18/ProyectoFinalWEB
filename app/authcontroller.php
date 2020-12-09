@@ -1,5 +1,7 @@
 <?php 
 
+include"../app/app.php";
+
 include_once "connectionController.php";
 
 
@@ -22,6 +24,11 @@ $password = strip_tags($_POST['password']);
 			$password = strip_tags($_POST['password']);
 			$authController->acces($email,$password);
 			break;
+
+			case 'logout':
+	$authController->logout($email,$password);
+
+				break;
 		
 	
 	}
@@ -96,7 +103,8 @@ class AuthController
 
 						$_SESSION['id'] = $user['id'];
 						$_SESSION['nombre'] = $user['nombre'];
-						$_SESSION['email'] = $user['email'];  
+						$_SESSION['email'] = $user['email']; 
+						$_SESSION['role'] = $user['role'];
 
 
 						header("Location:../peliculas" );
@@ -127,6 +135,10 @@ class AuthController
 
 	public function logout()
 	{
+
+
+		session_destroy();
+		header('Location: ../peliculas');
 
 	}
 };

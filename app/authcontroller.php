@@ -1,5 +1,5 @@
 <?php 
-include "app.php";
+
 include_once "connectionController.php";
 
 
@@ -45,29 +45,30 @@ class AuthController
 
 				 $prepared_query = $conn->prepare($query);
 				 $prepared_query->bind_param('sssss',$nombre,$apellidos,$nick,$email,$password);
-				 $execute = $prepared_query->execute();
+				 
 
-				 var_dump($execute);
+				 
 				 if ($prepared_query->execute()) {
+
 				 	$this->acces($email, $originalpassword);
 				 	
 				 	
 				 	
 				 }else{
 				 	$_SESSION['error'] = 'verifique los datos envíados';
-
+// echo "1";
 					header("Location:". $_SERVER['HTTP_REFERER'] );
 					
 				 }
 			}else{
 				$_SESSION['error'] = 'verifique la información del formulario';
-
+// echo "2";
 				header("Location:". $_SERVER['HTTP_REFERER'] );
 			}
 
 		}else{
 			$_SESSION['error'] = 'verifique la conexión a la base de datos';
-
+// echo "3";
 			header("Location:". $_SERVER['HTTP_REFERER'] );
 		}
 

@@ -1,4 +1,9 @@
 <?php 
+if(!isset($_SESSION) || !isset($_SESSION['id']))
+{
+	header("Location:../");
+}
+
 include "../app/movieController.php";
 
 	

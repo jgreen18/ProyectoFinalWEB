@@ -23,28 +23,28 @@ include "../app/movieController.php";
 
 	<div style=" width: 24.69%; height: 500px; display: inline-block; margin: 0; vertical-align: top;">
 		<h3 style="font-family: arial; margin-left: 2%; color: #DC7633;">Peliculas recomendadas:</h3>
-		<p style="font-size: 12px; font-family: arial;">
+		<p style="font-size: 12px; font-family: arial; margin-bottom: 10%;">
 			<a href=""><img src="../assets/imagenes/kickass.jpg" width="40%" style="float: left; margin-right: 2%"></a><b>KICK-ASS:</b> A pesar de la falta completa de poderes extraordinarios, un adolescente se reinventa a sí mismo como superhéroe y se enfrenta a un criminal. 
 		</p>
 
-		<p style="font-size: 12px; font-family: arial;">
+		<p style="font-size: 12px; font-family: arial; margin-bottom: 10%;">
 			<a href=""><img src="../assets/imagenes/Daredevil.jpg" width="40%" style="float: left; margin-right: 2%"></a><b>DAREDEVIL:</b> Ciego desde que era joven, Matt Murdock lucha contra la injusticia de día como abogado y por la noche como Daredevil en Nueva York. 
 		</p>
 		
-		<p style="font-size: 12px; font-family: arial;">
+		<p style="font-size: 12px; font-family: arial; margin-bottom: 10%;">
 			<a href=""><img src="../assets/imagenes/creed.jpg" width="40%" style="float: left; margin-right: 2%"></a><b>CREED:</b> El excampeón del mundo de peso pesado Rocky Balboa se desempeña como el entrenador y mentor de Adonis Johnson, el hijo de su difunto amigo Apollo Creed. 
 		</p>
 
-		<p style="font-size: 12px; font-family: arial;">
+		<p style="font-size: 12px; font-family: arial; margin-bottom: 10%;">
 			<a href=""><img src="../assets/imagenes/ted.jpg" width="40%" style="float: left; margin-right: 2%"></a><b>TED:</b> Cuando John Bennett era un niño pequeño, pidió el deseo de que Ted, su querido oso de peluche, cobrara vida. pero este oso terminó siendo un oso maloso muy grosero.
 		</p>
 
-		<p style="font-size: 12px; font-family: arial;">
+		<p style="font-size: 12px; font-family: arial; margin-bottom: 10%;">
 			<a href=""><img src="../assets/imagenes/vecinos.jpg" width="40%" style="float: left; margin-right: 2%"></a><b>BUENOS VECINOS:</b> Mac y Kelly acaban de tener una bebé adorable y se han comprado una preciosa casa. Los problemas comienzan cuando sus nuevos vecinos son una fraternidad.
 
 	</div>
 
-	<div style="background-color: #1B2631; width: 75%; height: 80px; padding-top: 2%;">
+	<div style="background-color: #1B2631; width: 75%; height: 80px; padding-top: 1%;">
 		<img style="margin-left: 2%; display: inline-block;" src="../assets/imagenes/ver.png">
 		<p style="margin-left: 0.5%; margin-top: 0; margin-right: 3%; display: inline-block;"> 0 </p>
 		

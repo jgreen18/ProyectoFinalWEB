@@ -2,7 +2,7 @@
  	include "../layouts/alerts.template.php";
 
 	include"../app/app.php";
-
+		
 		if(!isset($_SESSION) || !isset($_SESSION['id'] )|| $_SESSION['role'] == '1'   ) 
 		{
 			header("Location:../peliculas");
@@ -22,14 +22,25 @@ $users = $userController->get();
 	<title>Gestion de Usuarios</title>
 	<link rel="stylesheet" type="text/css" href="../assets/css/users.css?v0.0.3">
 </head>
-<body style="background: linear-gradient(to bottom, black, gray); width: 100%; height: 760px; margin: 0; padding: 0;">
+<body style="background: linear-gradient(to bottom, black, gray); width: 100%; height: 1000px; margin: 0; padding: 0;">
+
+	<form id="logout" method="POST" action="../app/authController.php">
+	<button type="submit" style="margin-left: 85%; width: 10%; display: inline-block;">cerrar sesion</button>
+	<input type="hidden"  name="action" value="logout">
+	</form>
+
+	<form id="logout" method="POST" action="../movies">
+	<button type="submit" style="margin-left: 85%; width: 10%; display: inline-block;">to movies</button>
+	<input type="hidden"  name="action" value="logout">
+	</form>
+
 	<div id="menu">
 
 
 
 <!-- Edit -->
 		<form id="edit" method="POST" action="../app/userController.php" >
-			<h2 style="margin-left: 10%;">Editar peliculas</h2>
+			<h2 style="margin-left: 10%;">Editar usuarios</h2>
 
 			<input type="text" name="id" id="id" placeholder="id" required="" style="margin-left: 10%; margin-top: 2%; width: 70%; padding: 2%; -webkit-border-radius: 50px;-moz-border-radius: 50px;
 				border-radius: 50px;" >

@@ -2,7 +2,7 @@
  	include "../layouts/alerts.template.php";
 
 	include"../app/app.php";
-
+		
 		if(!isset($_SESSION) || !isset($_SESSION['id'] )|| $_SESSION['role'] == '1'   ) 
 		{
 			header("Location:../peliculas");
@@ -20,7 +20,17 @@ $movieController = new MovieController();
 	<title>Agregar peliculas</title>
 	<link rel="stylesheet" type="text/css" href="../assets/css/movies.css?v0.0.1">
 </head>
-<body style="background: linear-gradient(to bottom, black, gray); width: 100%; height: 760px; margin: 0; padding: 0;">
+<body style="background: linear-gradient(to bottom, black, gray); width: 100%; height: 1000px; margin: 0; padding: 0;">
+
+	<form id="logout" method="POST" action="../app/authController.php">
+	<button type="submit" style="margin-left: 85%; width: 10%; display: inline-block;">cerrar sesion</button>
+	<input type="hidden"  name="action" value="logout">
+	</form>
+
+	<form id="logout" method="POST" action="../users">
+	<button type="submit" style="margin-left: 85%; width: 10%; display: inline-block;">to users</button>
+	<input type="hidden"  name="action" value="logout">
+	</form>
 
 	<div id="menu">
 <!-- STOREEE -->
